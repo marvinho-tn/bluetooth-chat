@@ -49,6 +49,8 @@ O objetivo deste projeto é desenvolver um aplicativo de mensagens que não depe
 
 Esses desafios devem ser cuidadosamente considerados durante o desenvolvimento do aplicativo, a fim de garantir uma solução robusta, escalável e segura.
 
+## Infraestrutura
+
 Aqui está um diagrama de infraestrutura simplificado para o aplicativo de mensagens proposto, levando em consideração os requisitos levantados:
 
 ```mermaid
