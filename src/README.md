@@ -87,3 +87,74 @@ Explicação do diagrama:
 
 Esse diagrama ilustra a infraestrutura geral do aplicativo, mostrando como as diferentes tecnologias e funcionalidades se integram para criar uma solução de mensagens segura e independente de internet.
 
+## Modelo Entidade Relacionamento
+
+Aqui está um diagrama de entidade-relacionamento (DER) simplificado para o aplicativo de mensagens proposto, com base nos requisitos e no diagrama de infraestrutura apresentados anteriormente:
+
+```mermaid
+erDiagram
+    USUARIO {
+        int id
+        string nome
+        string cpf
+        string chave_publica
+        string chave_privada
+    }
+    
+    CONTATO {
+        int id
+        int usuario_id
+        int contato_id
+        string tipo
+    }
+    
+    GRUPO {
+        int id
+        string nome
+        int criador_id
+    }
+    
+    PARTICIPANTE {
+        int id
+        int grupo_id
+        int usuario_id
+    }
+    
+    MENSAGEM {
+        int id
+        int remetente_id
+        int destinatario_id
+        string texto
+        datetime data_envio
+        string status
+    }
+    
+    USUARIO ||--o{ CONTATO : possui
+    USUARIO ||--o{ GRUPO : cria
+    GRUPO ||--o{ PARTICIPANTE : possui
+    USUARIO ||--o{ MENSAGEM : envia
+    USUARIO ||--o{ MENSAGEM : recebe
+```
+
+Entidades:
+
+1. **USUARIO**: Representa cada usuário do aplicativo, com informações como nome, CPF, chave pública e chave privada.
+
+2. **CONTATO**: Armazena os contatos de cada usuário, incluindo o tipo de contato (próximo ou distante).
+
+3. **GRUPO**: Representa os grupos de conversa, com informações sobre o nome do grupo e o usuário que o criou.
+
+4. **PARTICIPANTE**: Associa os usuários aos grupos dos quais fazem parte.
+
+5. **MENSAGEM**: Guarda as informações sobre cada mensagem enviada, incluindo o remetente, destinatário, texto, data de envio e status da mensagem.
+
+Relacionamentos:
+
+- Um usuário pode possuir vários contatos (relação 1:N).
+- Um usuário pode criar vários grupos (relação 1:N).
+- Um grupo pode ter vários participantes (relação 1:N).
+- Um usuário pode enviar várias mensagens (relação 1:N).
+- Um usuário pode receber várias mensagens (relação 1:N).
+
+Esse DER fornece uma visão geral das entidades e seus relacionamentos necessários para implementar as funcionalidades do aplicativo de mensagens, como gerenciamento de usuários, contatos, grupos e mensagens.
+
