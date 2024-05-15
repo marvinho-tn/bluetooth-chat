@@ -49,4 +49,39 @@ O objetivo deste projeto é desenvolver um aplicativo de mensagens que não depe
 
 Esses desafios devem ser cuidadosamente considerados durante o desenvolvimento do aplicativo, a fim de garantir uma solução robusta, escalável e segura.
 
-Sources
+Aqui está um diagrama de infraestrutura simplificado para o aplicativo de mensagens proposto, levando em consideração os requisitos levantados:
+
+```mermaid
+graph TD
+A[Usuário] --> B(Aplicativo Flutter)
+B --> C{Bluetooth}
+B --> D{GPS}
+C --> E[Rede de Dispositivos]
+D --> E
+E --> F[Roteamento de Mensagens]
+F --> G[Criptografia Assimétrica]
+G --> H[Armazenamento Local]
+B --> I[Cadastro e Autenticação]
+I --> J[Validação de Dados]
+I --> K[Geração de Chaves]
+B --> L[Grupos de Conversa]
+B --> M[Adição de Contatos]
+M --> N[Pareamento Bluetooth]
+M --> O[Rota Intermediária]
+```
+
+Explicação do diagrama:
+
+- O usuário interage com o aplicativo Flutter desenvolvido usando a tecnologia Flutter.
+- O aplicativo utiliza o Bluetooth e o GPS do dispositivo para se conectar à rede de dispositivos.
+- Cada dispositivo na rede atua como receptor, remetente e servidor, formando uma rede descentralizada.
+- O roteamento de mensagens é feito através dessa rede de dispositivos, utilizando o sinal de GPS para traçar a rota mais curta.
+- As mensagens são criptografadas de ponta a ponta usando criptografia assimétrica com chave pública e privada.
+- O histórico de conversas é armazenado localmente em cada dispositivo.
+- O cadastro de novos usuários é feito através da internet, com validação de dados pessoais (como CPF) para evitar contas falsas.
+- Cada dispositivo gera suas próprias chaves públicas e privadas durante o cadastro.
+- O aplicativo permite a criação de grupos de conversa.
+- A adição de contatos pode ser feita por pareamento Bluetooth (para contatos próximos) ou por rota intermediária (para contatos distantes).
+
+Esse diagrama ilustra a infraestrutura geral do aplicativo, mostrando como as diferentes tecnologias e funcionalidades se integram para criar uma solução de mensagens segura e independente de internet.
+
