@@ -158,3 +158,37 @@ Relacionamentos:
 
 Esse DER fornece uma visão geral das entidades e seus relacionamentos necessários para implementar as funcionalidades do aplicativo de mensagens, como gerenciamento de usuários, contatos, grupos e mensagens.
 
+## Casos de Uso
+
+Aqui está um diagrama de casos de uso baseado no projeto do aplicativo de mensagens proposto:
+
+```mermaid
+@startuml
+left to right direction
+actor Usuario as U
+rectangle "Aplicativo de Mensagens" {
+  U --> (Enviar Mensagem)
+  U --> (Receber Mensagem)
+  U --> (Criar Grupo)
+  U --> (Adicionar Contato)
+  U --> (Visualizar Mensagens)
+  (Enviar Mensagem) --> (Criptografar Mensagem)
+  (Receber Mensagem) --> (Descriptografar Mensagem)
+  (Criar Grupo) --> (Adicionar Participante)
+  (Criar Grupo) --> (Enviar Mensagem em Grupo)
+  (Adicionar Contato) --> (Parear Dispositivos)
+  (Adicionar Contato) --> (Adicionar Contato Distante)
+}
+@enduml
+```
+
+Explicação dos principais casos de uso:
+
+1. **Enviar Mensagem**: Permite que o usuário envie uma mensagem para outro usuário ou grupo.
+2. **Receber Mensagem**: Permite que o usuário receba e visualize mensagens recebidas.
+3. **Criar Grupo**: Permite que o usuário crie um grupo de conversa e adicione participantes.
+4. **Adicionar Contato**: Permite que o usuário adicione novos contatos, seja por pareamento de dispositivos ou por adição de contatos distantes.
+5. **Visualizar Mensagens**: Permite que o usuário acesse e visualize o histórico de mensagens trocadas.
+
+Esses casos de uso representam as principais interações que um usuário terá com o aplicativo de mensagens, desde o envio e recebimento de mensagens até a criação de grupos e adição de contatos.
+
