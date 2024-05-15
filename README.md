@@ -17,7 +17,7 @@ Para clonar o projeto, siga os seguintes passos:
 3. Abra o terminal (Windows: PowerShell, Linux/macOS: Terminal) e navegue até o diretório onde deseja clonar o projeto.
 4. Execute o seguinte comando para clonar o repositório:
    ```
-   git clone [URL_DO_REPOSITÓRIO]
+   git clone [https://github.com/marvinho-tn/bluetooth-chat]
    ```
 5. Aguarde a conclusão do processo de clonagem.
 
